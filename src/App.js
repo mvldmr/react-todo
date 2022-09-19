@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Form from './components/form/Form';
+import List from './components/list/List';
 
 function App() {
+  const todoList = [
+    {title: 'First TODO', subtitle: 'About this TODO', id: 1},
+    {title: 'Second TODO', subtitle: 'About this TODO', id: 2},
+  ];
+  const keys = ['title', 'subtitle'];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app-container">
+        <Form keyList={keys}/>
+        <List cardList={todoList}/>
+      </div>
     </div>
   );
 }

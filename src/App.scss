@@ -1,0 +1,22 @@
+.app {
+  background-color: aliceblue;
+  color: #0b0b2a;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+  &-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    @media (max-width: 1200px) {
+      max-width: 980px;
+    }
+    @media (max-width: 980px) {
+      max-width: 740px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: #0b0b2a;
+    color: aliceblue;
+  }
+}
