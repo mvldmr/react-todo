@@ -20,6 +20,10 @@
     border-radius: 10px;
     transition: 0.2s ease opacity;
     cursor: pointer;
+    &:disabled {
+      opacity: 0.5 !important;
+      cursor: default !important;
+    }
     &:hover {
       opacity: 0.8;
     }
