@@ -14,6 +14,11 @@ function App() {
       return [todo, ...prevTodo];
     });
   }
+  const updateList = (id) => {
+    setTodoList(prevTodo => {
+      return prevTodo.filter((obj) => obj.id !== id);
+    });
+  }
   const [todoList, setTodoList] = useState(DUMMY_LIST);
 
   const keys = ['title', 'subtitle'];
@@ -21,7 +26,7 @@ function App() {
     <div className="app">
       <div className="app-container">
         <Form keyList={keys} onAddTodo={addTodo}/>
-        <List cardList={todoList}/>
+        <List onUpdateList={updateList} cardList={todoList}/>
       </div>
     </div>
   );
