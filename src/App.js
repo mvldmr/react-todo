@@ -1,15 +1,21 @@
 import './App.scss';
 import Form from './components/form/Form';
 import List from './components/list/List';
+import {useState} from 'react';
+
+const DUMMY_LIST = [
+  {title: 'First TODO', subtitle: 'About this TODO', id: 1},
+  {title: 'Second TODO', subtitle: 'About this TODO', id: 2},
+];
 
 function App() {
-  const todoList = [
-    {title: 'First TODO', subtitle: 'About this TODO', id: 1},
-    {title: 'Second TODO', subtitle: 'About this TODO', id: 2},
-  ];
   const addTodo = (todo) => {
-    console.log(todoList);
+    setTodoList(prevTodo => {
+      return [todo, ...prevTodo];
+    });
   }
+  const [todoList, setTodoList] = useState(DUMMY_LIST);
+
   const keys = ['title', 'subtitle'];
   return (
     <div className="app">

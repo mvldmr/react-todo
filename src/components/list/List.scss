@@ -3,6 +3,7 @@
   padding-left: 0;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   &__item {
     width: calc(33.3333% - 20px);
     margin: 0 10px;

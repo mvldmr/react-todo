@@ -1,25 +1,28 @@
 .form {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   background-color: lavender;
   border-radius: 15px;
   padding: 15px 20px;
-  margin-bottom: 25px;
   color: darkslateblue;
+  width: calc(33.3333% - 20px);
+  margin: 0 10px 25px;
+  box-sizing: border-box;
+  @media (max-width: 980px) {
+    width: calc(50% - 20px);
+  }
   @media (prefers-color-scheme: dark) {
     background-color: darkslateblue;
     color: aliceblue;
   }
   &__submit {
     width: 100%;
-    height: 39.5px;
+    height: 42px;
     border: none;
     background-color: darkslateblue;
     color: white;
     border-radius: 10px;
     transition: 0.2s ease opacity;
     cursor: pointer;
+    margin-top: 10px;
     &:disabled {
       opacity: 0.5 !important;
       cursor: default !important;
