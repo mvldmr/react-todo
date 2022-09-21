@@ -4,8 +4,8 @@ import List from './components/list/List';
 import {useState} from 'react';
 
 const DUMMY_LIST = [
-  {title: 'First TODO', subtitle: 'About this TODO', id: 1},
-  {title: 'Second TODO', subtitle: 'About this TODO', id: 2},
+  {title: 'First TODO', subtitle: 'About this TODO', done: false, id: 1},
+  {title: 'Second TODO', subtitle: 'About this TODO', done: false, id: 2},
 ];
 
 function App() {
@@ -22,11 +22,12 @@ function App() {
   const [todoList, setTodoList] = useState(DUMMY_LIST);
 
   const keys = ['title', 'subtitle'];
+  const list = todoList.length ? <List onUpdateList={updateList} cardList={todoList}/> : <h2>List is empty</h2>
   return (
     <div className="app">
       <div className="app-container">
         <Form keyList={keys} onAddTodo={addTodo}/>
-        <List onUpdateList={updateList} cardList={todoList}/>
+        {list}
       </div>
     </div>
   );

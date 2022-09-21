@@ -5,7 +5,7 @@ function List(props) {
 	return (<ul className="card-list">
 		{props.cardList.map(card => {
 			return (<li className="card-list__item" key={card.id + '-list'}>
-				<Card title={card.title} onRemove={props.onUpdateList} subtitle={card.subtitle} id={card.id} />
+				<Card title={card.title} onRemove={props.onUpdateList} done={card.done} subtitle={card.subtitle} id={card.id} />
 			</li>)
 		})}
 	</ul>)
