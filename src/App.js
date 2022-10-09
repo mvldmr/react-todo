@@ -1,7 +1,7 @@
 import './App.scss';
 import Form from './components/form/Form';
 import List from './components/list/List';
-import {useState} from 'react';
+import {Fragment, useState} from 'react';
 
 const DUMMY_LIST = [
   {title: 'First TODO', subtitle: 'About this TODO', done: false, id: 1},
@@ -24,12 +24,10 @@ function App() {
   const keys = ['title', 'subtitle'];
   const list = todoList.length ? <List onUpdateList={updateList} cardList={todoList}/> : <h2>List is empty</h2>
   return (
-    <div className="app">
-      <div className="app-container">
-        <Form keyList={keys} onAddTodo={addTodo}/>
-        {list}
-      </div>
-    </div>
+    <Fragment>
+      <Form keyList={keys} onAddTodo={addTodo}/>
+      {list}
+    </Fragment>
   );
 }
 
