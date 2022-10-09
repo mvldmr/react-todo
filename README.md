@@ -1,4 +1,4 @@
-# [TODO app](https://mvldmr.github.io/react-todo/build/)
+# [TODO app](https://mvldmr.github.io/react-todo/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
